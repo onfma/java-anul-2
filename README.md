@@ -1,4 +1,4 @@
-# java-anul-2-onofrei-maria-a2
+# java-anul-2
 
 Repository Onofrei M. Maria - 2A2
 
