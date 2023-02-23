@@ -1,10 +1,6 @@
-import java.io.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.time.Duration;
-import java.time.Instant;
-import org.apache.commons.lang3.time.StopWatch;
 
 public class homework_lab1 {
 
@@ -43,7 +39,7 @@ public class homework_lab1 {
                 System.out.println();
             }
         }
-        
+
     }
 
     public static void main(String []args) throws IOException
@@ -51,33 +47,34 @@ public class homework_lab1 {
         int n = -1;
         do{
             // citire
-            System.out.print("n = "); 
+            System.out.print("n = ");
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String numberString = reader.readLine();
 
+
             // validare
-            boolean verificareInt = verificareStringToInt(numberString); // verificare daca string ul este acc un int 
+            boolean verificareInt = verificareStringToInt(numberString); // verificare daca string ul este acc un int
             if(verificareInt)
             {
                 n = Integer.parseInt(numberString);
-                if (n < 2) 
+                if (n < 2)
                 {
-                    System.out.println("eroare! numar prea mic introdus \nintroduceti un nr"); 
+                    System.out.println("eroare! numar prea mic introdus \nintroduceti un nr");
                     n = -1;
                 }
-            } 
+            }
             else System.out.println("eroare! nu este variabila de tip int \nintroduceti un nr");
 
         }while(n == -1);
- 
+
         if (n >= 30000)
         {
             long startTime = System.nanoTime();
             LatinSquare(n);
             long endTime = System.nanoTime();
 
-            System.out.println("timpul de executie in nanosec: " + (endTime - startTime)); 
+            System.out.println("timpul de executie in nanosec: " + (endTime - startTime));
         }
-        else LatinSquare(n); 
+        else LatinSquare(n);
     }
 }
