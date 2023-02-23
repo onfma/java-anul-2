@@ -7,6 +7,11 @@ public class homework_lab1 {
     static boolean verificareStringToInt(String s)
     {
         // cod verificare si validare ca string ul este un nr int
+        if(s.charAt(0) == '0') return false;
+        for(int i=0;i<s.length();i++)
+        {
+            if(!Character.isDigit(s.charAt(i))) return false;
+        }
         return true;
     }
 
