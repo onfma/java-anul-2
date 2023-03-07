@@ -75,6 +75,9 @@ public class BestRouteProblem
             if(endLocation.equals(l)) ok3 = true;
         }
 
+        if(!(ok1 && ok2)) throw new Error("EROARE! Instantele problemei nu sunt corecte.");
+        if(!ok3) throw new Error("EROARE! Nu exista un drum la " + startLocation.getLocationName() + " pana la " + endLocation.getLocationName());
+
         return ok1 && ok2 && ok3;
     }
 
@@ -89,9 +92,8 @@ public class BestRouteProblem
     {
         if(verifyProblemInstance(map, startLocation, endLocation))
         {
-            // COD CARE IMI GENEREAZA CEL MAI SCURT DRUM
-            System.out.println("Ruta cea mai scurta: " + bestRouteComponents);
+            // *ar trebui* COD CARE IMI GENEREAZA CEL MAI SCURT DRUM
+            System.out.println("Exista macar un drum de la " + startLocation.getLocationName() + " pana la " + endLocation.getLocationName());
         }
-        else throw new Error("EROARE! Instantele problemei nu sunt corecte.");
     }
 }
