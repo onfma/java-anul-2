@@ -29,6 +29,6 @@ public class Main {
         map.addRoad(r3);
 
         //map.getMap();
-        BestRouteProblem x = new BestRouteProblem(map, l1, l3);
+        BestRouteProblem x = new BestRouteProblem(map, l1, l4);
     }
 }
