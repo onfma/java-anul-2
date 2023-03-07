@@ -7,21 +7,28 @@ public class Main {
     {
         Map map = new Map();
 
-        Location v = new City("v",10,10);
-        map.addLocation(v);
+        Location l1 = new City("l1",10,10);
+        map.addLocation(l1);
 
-        Location b = new GasStation("b",1,10);
-        map.addLocation(b);
+        Location l2 = new GasStation("l2",1,10);
+        map.addLocation(l2);
 
-        Location a = new City("a",3,1);
-        map.addLocation(a);
+        Location l3 = new City("l3",3,1);
+        map.addLocation(l3);
 
-        Road ab = new Highway(a, b, 100);
-        map.addRoad(ab);
+        Location l4 = new City("l4",7,20);
+        map.addLocation(l4);
 
-        Road av = new Express(b, v, 100);
-        map.addRoad(av);
+        Road r1 = new Highway(l1, l2, 100);
+        map.addRoad(r1);
 
-        map.getMap();
+        Road r2 = new Express(l3, l2, 100);
+        map.addRoad(r2);
+
+        Road r3 = new Highway(l2, l4, 200);
+        map.addRoad(r3);
+
+        //map.getMap();
+        BestRouteProblem x = new BestRouteProblem(map, l1, l3);
     }
 }
