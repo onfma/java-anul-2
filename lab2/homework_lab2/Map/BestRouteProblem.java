@@ -6,8 +6,49 @@ import java.util.ArrayList;
 
 public class BestRouteProblem
 {
-    protected ArrayList<Road> bestRouteComponents = new ArrayList<Road>();
+    protected ArrayList<Road> bestRouteComponents = new ArrayList<>();
+    protected ArrayList<Location> reachableLocations;
     protected double totalLenght;
+
+    /**
+     * Puts in the "reachableLocations" all the locations that can be reached
+     * from the startLocation from the roads that are in the map.
+     */
+    protected void findDestinations(Map map, Location startLocation)
+    {
+        // deplasare catre noile destinatii
+        for(Road road : map.roads)
+        {
+            if(road.getRoadStartLocation() == startLocation)
+            {
+                boolean isInArray1 = false;
+                for(Location l : reachableLocations)
+                {
+                    if(road.getRoadEndLocation().equals(l))
+                    {
+                        isInArray1 = true;
+                    }
+                }
+                if(!isInArray1) reachableLocations.add(road.getRoadEndLocation());
+
+                //System.out.println(reachableLocations);
+                findDestinations(map, road.getRoadEndLocation());
+            }
+            if(road.getRoadEndLocation() == startLocation)
+            {
+                boolean isInArray1 = false;
+                for (Location l : reachableLocations) {
+                    if (road.getRoadStartLocation().equals(l)) {
+                        isInArray1 = true;
+                    }
+                }
+                if (!isInArray1) reachableLocations.add(road.getRoadStartLocation());
+
+                //System.out.println(reachableLocations);
+                //findDestinations(map,road.getRoadStartLocation());
+            }
+        }
+    }
 
     /**
      * Returns FALSE if the 2 locations aren't in the map or
@@ -26,6 +67,13 @@ public class BestRouteProblem
 
         // se verifica daca exista macar un drum intre locatii
         boolean ok3 = false;
+        reachableLocations = new ArrayList<>();
+        reachableLocations.add(startLocation);
+        findDestinations(map, startLocation);
+        for(Location l : reachableLocations)
+        {
+            if(endLocation.equals(l)) ok3 = true;
+        }
 
         return ok1 && ok2 && ok3;
     }
@@ -42,7 +90,7 @@ public class BestRouteProblem
         if(verifyProblemInstance(map, startLocation, endLocation))
         {
             // COD CARE IMI GENEREAZA CEL MAI SCURT DRUM
-            System.out.println("Ruta cea mai scurta " + bestRouteComponents);
+            System.out.println("Ruta cea mai scurta: " + bestRouteComponents);
         }
         else throw new Error("EROARE! Instantele problemei nu sunt corecte.");
     }
