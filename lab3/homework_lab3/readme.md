@@ -1,0 +1,7 @@
+# Homework - Lab 3 - Onofrei Maria
+
+Codul este organizat in 8 componente: Interfata _Node_, _Company_, _Person_ din care deriva _Designer_ si _Programmer_, _Map_, _Network_ si _SocialNetwork_.
+
+Clasele _Company_ si _Person_ sunt principalele instante ale temei, deoarce intre oricare doua companii, doua persoane sau a unei persoane si o companie se pot crea relatii de tip Network. Clasa _Company_ are ca atribute particulare "fundingDate" de tip LocalDate si "CEO" de tip Person. Clasa _Person_ este super clasa pentru _Designer_, care contine atributele particulare "yearsOfExperience" de tip Int, "university" de tip String si "designPlatform" de tip String, si pentru _Programmer_, cu atributele particulare "yearsOfExperience" de tip Int, "university" de tip String si "programmingLanguage" de tip String. De asemenea, atat _Company_, cat si _Person_, contin cate un atribut de tip _Map_ care tine evidenta tuturor relatiilor de tip _Network_ a unei persoane sau a unei companii.
+
+Astfel, _Network_ creeaza legaturi intre oricare doua entitati de tip _Company_/_Person_, in timp ce _Map_ tine toate relatiile grupate intr-un Array specifica oricarei entitati. In clasa _SocialNetwork_ se gasesc indexate toate relatiile unei retele sociale, adica toate relatiiloe create intre _Person_ si/sau _Company_. Tot aici, se face si sortarea entitatilor in functie de "importanta" lor (numar de conexiuni de tip Network in care sunt implicati).
