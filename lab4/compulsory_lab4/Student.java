@@ -1,7 +1,9 @@
 package org.example;
+import java.util.*;
 
 public class Student implements Comparable<Student> {
     private String name;
+    private List<Project> admissibleProjects = new ArrayList<>();
 
     /**
      * Class constructor
@@ -14,6 +16,10 @@ public class Student implements Comparable<Student> {
      */
     public String getName() {
         return name;
+    }
+
+    public void setAdmissibleProject(Project p){
+        admissibleProjects.add(p);
     }
 
     @Override
