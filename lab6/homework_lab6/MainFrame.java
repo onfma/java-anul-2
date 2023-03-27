@@ -7,11 +7,17 @@ public class MainFrame extends JFrame{
     ControlPanel controlPanel;
     DrawingPanel canvas;
 
+    /**
+     * Class constructor
+     */
     public MainFrame() {
         super("My Drawing Application");
         init();
     }
 
+    /**
+     * Class initiator: adds the 3 panels (Configuration, Control, Draw)
+     */
     private void init() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
