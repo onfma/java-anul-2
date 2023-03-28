@@ -15,7 +15,6 @@ public class Main {
         //SaveCommand.OpenCatalogForSave(catalog,"C:/Users/Maria/Desktop/catalog.json");
         //SaveCommand.execute();
 
-        // THIS DOES NOT WORK
         //LoadCommand.OpenPathToLoadFrom("C:/Users/Maria/Desktop/catalog.json");
         //Catalog c = new Catalog("catalog2");
         //LoadCommand.execute(c);
