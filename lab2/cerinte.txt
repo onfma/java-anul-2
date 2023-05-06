@@ -26,3 +26,9 @@ Homework (2p)
 -Implement a method that determines if a problem's instance is valid.
 -Implement an algorithm for determining if it is possible to go from one location to another using the given roads.
 -Write doc comments in your source code and generate the class documentation using javadoc.
+
+Bonus (2p)
+
+-Create a class to describe the solution.
+-Implement an algorithm to find the best route from a location to another, either as the shortest route, or the fastest route.
+-Generate large random instances of the problem and analyze the performance of your algorithm (running times, memory consumption).
