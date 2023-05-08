@@ -1,1 +1,3 @@
 # Compulsory - Lab 10 - Onofrei Maria
+
+Aplicatia are la baza ideea de conexiune intre un Client si un Server. Serverul deschis asteapta aparitia clientilor pentru ca acestia sa se poata conecta la el. In comentul conexiunii unui client, acesta poate trimite diferite comenzi catre server. Daca o comanda este invalida, se va afisa in client acest lucru. Principalele comenzi sunt "exit" unde se opeste rularea terminalului de Client, dar serverul ramane bineinteles deschis, dar exista si comanda "stop" unde principala functiune este de oprire totala a serverului, ceea ce inseamna bineinteles si apelarea automata a "exit" pentru client.
